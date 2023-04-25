@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
-import TransactionsList from "./TransactionsList";
+import TransactionsList from "./TransactionList";
 import Search from "./Search";
-import AddTransactionForm from "./AddTransactionForm";
+import TransactionForm from "./TransactionForm";
 
 function AccountContainer() {
  
@@ -20,7 +20,7 @@ function updatedTransactionEvents(addedTransactions) {
   return (
     <div>
       <Search  searchEvent={searchEvent} setSearchEvent={setSearchEvent }/>
-      <AddTransactionForm addedData ={updatedTransactionEvents} />
+      <TransactionForm addedData ={updatedTransactionEvents} />
       <TransactionsList transactionsEvent={transactionsEvent} setTransactionsEvent = {setTransactionsEvent}  searchEvent ={searchEvent}/>
     </div>
   );

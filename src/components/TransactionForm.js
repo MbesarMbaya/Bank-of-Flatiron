@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function AddTransactionForm({addedData}) {
+function TransactionForm({addedData}) {
 const [formInput, setFormInput] = useState({
   date:"",
   description:"",
@@ -48,4 +48,4 @@ function handleSubmit(e) {
   );
 }
 
-export default AddTransactionForm;
+export default TransactionForm;
