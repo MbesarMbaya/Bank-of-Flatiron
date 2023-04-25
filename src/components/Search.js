@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Search({searchEvent, setSearchEvent}) {
-function handleSearch(event) {
-  setSearchEvent(event.target.value);
+function Search({getSearch}) {
+  const [search, setSearch] = useState("")
+function handleSubmit(event) {
+  event.preventDefault()
+  getSearch(search)
 }
 
 
 
   return (
-    <div className="ui large fluid icon input">
+    // <div className="ui large fluid icon input">
+      <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search your Recent Transactions"
-        onChange={handleSearch}
-        value={searchEvent}
+        onChange={e => setSearch(e.target.value)}
+        value={search}
       />
-      <i className="circular search link icon"></i>
-    </div>
+      <input />
+      <button type="submit"><i className="circular search link icon"></i></button>
+
+      </form>
+      
+    // 
   );
 }
 
